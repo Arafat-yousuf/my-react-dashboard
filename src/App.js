@@ -1,12 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Authentication from './components/Authentication/Authentication';
+import Header from './components/Header/Header';
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Router>
+      <div className="mainApp">
+      <Switch>
+        <Route exact path ="/">
+        <Authentication></Authentication>
+        </Route>
+        <Route path ="/dashboard">
+          <Header/>
+        </Route>
+
+      </Switch>
+      </div>
+    </Router>
   );
 }
 
